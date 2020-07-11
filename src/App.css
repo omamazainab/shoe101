@@ -30,3 +30,24 @@
   margin: 2px auto;
 
 }
+
+.Navbar{
+  background-color: black;
+  height: 10vh;
+  text-align: center;
+  padding: 2vh;
+}
+
+.Navbar>.Link{
+  color: white;
+  margin: 0 1vw;
+  text-transform: uppercase;
+}
+
+.Navbar>.Link:hover{
+  color: white;
+  text-decoration: none;
+  font-size: larger;
+  font-weight: bolder;
+  color: rgb(193, 193, 251);
+}

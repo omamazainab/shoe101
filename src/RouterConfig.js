@@ -8,13 +8,14 @@ import {
 import Home from './components/Home'
 import Products from './components/Products'
 import Product from './components/Product'
+import './App.css'
 
 const RouteConfig = () => {
     return (
         <Router>
-            <nav>
-                <Link  to="/">Home</Link>
-                <Link  to="/products">Products</Link>
+            <nav className="Navbar" >
+                <Link  to="/" className="Link">Home</Link>
+                <Link  to="/products" className="Link">Products</Link>
             </nav>
 
             <Routes>
