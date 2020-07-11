@@ -5,6 +5,8 @@ import {
     Link,
     Routes
 } from "react-router-dom";
+import Home from './components/Home'
+import Products from './components/Products'
 
 
 const RouteConfig = () => {
@@ -16,8 +18,8 @@ const RouteConfig = () => {
             </nav>
 
             <Routes>
-                <Route path="/" element={<h1>home</h1>} />
-                <Route exact path="/products" element={<h1>products</h1>} />
+                <Route path="/" element={<Home></Home>} />
+                <Route exact path="/products" element={<Products></Products>} />
                 {/* <Route path="/products/:slug" element={<Product/>} /> */}
                 <Route path="*" element={<h1>not found</h1>} />
             </Routes>
