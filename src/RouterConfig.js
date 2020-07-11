@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Home from './components/Home'
 import Products from './components/Products'
-
+import Product from './components/Product'
 
 const RouteConfig = () => {
     return (
@@ -20,7 +20,7 @@ const RouteConfig = () => {
             <Routes>
                 <Route path="/" element={<Home></Home>} />
                 <Route exact path="/products" element={<Products></Products>} />
-                {/* <Route path="/products/:slug" element={<Product/>} /> */}
+                <Route path="/products/:slug" element={<Product/>} />
                 <Route path="*" element={<h1>not found</h1>} />
             </Routes>
         </Router>
