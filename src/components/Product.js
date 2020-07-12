@@ -9,15 +9,16 @@ const Product = () => {
     const { slug } = useParams();
     const shoe = shoes[slug];
 
-    const { cart, addProduct } = useContext(GlobalContext);
+    const { cart, addProduct, increment } = useContext(GlobalContext);
 
     const addthisProduct = e => {
         e.preventDefault();
 
         if (cart.map(
-            product => (product.id === shoe ?  ( product.quantity++ ,true ) : false))
+            product => (product.id === shoe ? true : false))
             .includes(true)) {
-                
+                increment(shoe) ;
+                console.log('not fail')
         }else{
             const newProduct = {
                 id: shoe,
@@ -25,7 +26,7 @@ const Product = () => {
                 image: shoe.image,
                 quantity: 1
             }
-    
+            console.log('fail')
             addProduct(newProduct)
         }
 

@@ -33,10 +33,26 @@ export const GlobalProvider = ({ children }) => {
         });
     }
 
+    function increment(id){
+        dispatch({
+            type: 'INCREMENT',
+            payload: id
+        });
+    }
+
+    function decrement(id){
+        dispatch({
+            type: 'DECREMENT',
+            payload: id
+        });
+    }
+
 
     return (
         <GlobalContext.Provider value={{ 
             cart: state.cart,
+            increment,
+            decrement,
             deleteProduct,
             addProduct
              }}>
