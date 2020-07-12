@@ -4,7 +4,7 @@ import { GlobalContext } from '../context/GlobalState';
 
 const Cart = () => {
 
-    const { cart } = useContext(GlobalContext);
+    const { deleteProduct, cart } = useContext(GlobalContext);
 
 
 
@@ -13,7 +13,7 @@ const Cart = () => {
             {cart.map(product => (
                 <li >
                     {product.text} <span> {product.quantity} </span>
-                    {/* <button onClick={() => deleteTransaction(transaction.id)} className="delete-btn">x</button> */}
+                    <button onClick={() => deleteProduct(product.id)} className="delete-btn">x</button>
                 </li>
             ))}
         </ul>

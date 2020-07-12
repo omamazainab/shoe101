@@ -1,4 +1,4 @@
-import React,{useContext} from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalState';
 import shoes from './../shoes.json';
@@ -9,19 +9,27 @@ const Product = () => {
     const { slug } = useParams();
     const shoe = shoes[slug];
 
-    const { addProduct } = useContext(GlobalContext);
+    const { cart, addProduct } = useContext(GlobalContext);
 
     const addthisProduct = e => {
         e.preventDefault();
 
-        const newProduct = {
-            id: shoe,
-            text: shoe.name,
-            image : shoe.image,
-            quantity : 1
+        if (cart.map(
+            product => (product.id === shoe ?  ( product.quantity++ ,true ) : false))
+            .includes(true)) {
+                
+        }else{
+            const newProduct = {
+                id: shoe,
+                text: shoe.name,
+                image: shoe.image,
+                quantity: 1
+            }
+    
+            addProduct(newProduct)
         }
 
-        addProduct(newProduct)
+        
     }
 
     if (!shoe) {

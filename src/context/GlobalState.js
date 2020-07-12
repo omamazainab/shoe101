@@ -19,6 +19,12 @@ export const GlobalProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
     
     //Actions 
+    function deleteProduct(id){
+        dispatch({
+            type: 'DELETE_TRANSACTION',
+            payload: id
+        });
+    }
 
     function addProduct(product){
         dispatch({
@@ -31,6 +37,7 @@ export const GlobalProvider = ({ children }) => {
     return (
         <GlobalContext.Provider value={{ 
             cart: state.cart,
+            deleteProduct,
             addProduct
              }}>
             {children}

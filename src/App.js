@@ -1,14 +1,17 @@
 import React from 'react';
 import './App.css';
 import Routes from './RouterConfig'
-import {GlobalProvider} from './context/GlobalState'
+import { GlobalProvider } from './context/GlobalState'
 
 function App() {
+
+  
   return (
     <GlobalProvider>
-        <Routes></Routes>
+
+      <Routes></Routes>
     </GlobalProvider>
-    
+
   );
 }
 
