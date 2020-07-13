@@ -3,4 +3,4 @@
 
 http://shoeshop101.surge.sh/
 
-added a cart
+added a cart using context api and reducers 
