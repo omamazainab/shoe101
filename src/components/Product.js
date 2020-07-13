@@ -18,15 +18,15 @@ const Product = () => {
             product => (product.id === shoe ? true : false))
             .includes(true)) {
                 increment(shoe) ;
-                console.log('not fail')
+
         }else{
             const newProduct = {
                 id: shoe,
                 text: shoe.name,
-                image: shoe.image,
+                image: shoe.img,
                 quantity: 1
             }
-            console.log('fail')
+    
             addProduct(newProduct)
         }
 
@@ -39,7 +39,7 @@ const Product = () => {
 
     return (
         <div className="product">
-            <img src={shoe.img} alt={shoe.name} height="500px" width="500px" />
+            <img src={shoe.img} alt={shoe.name} style={{width:'40vw', height:'30vw'}} />
             <h5 className=" product-name">{shoe.name} </h5>
             <button onClick={addthisProduct}>Add to cart</button>
         </div>
